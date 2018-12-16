@@ -15,10 +15,12 @@ bot.on("message", async message => {
   let messageArray = message.content.split(" ");
   let cmd = messageArray[0];
   let args = messageArray.slice(1);
-
-  if (cmd === `${prefix}ping`){
-    message.channel.send("Pong!");
-  }
+  
+client.on('message', message => {
+    if (message.content === 'ok google') {
+    	message.reply('Google home is at your service');
+  	}
 });
+  
 
 bot.login(process.env.token);
